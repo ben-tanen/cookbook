@@ -23,7 +23,16 @@ function buildSongList(r) {
                 t.artists.forEach(function(a) {
                     output_str += a.name;
                 });
-                $('#playlist-list').append('<li>' + output_str +'</li>');
+                $('#playlist-list').append('<li><audio class="audio-sample"><source src="' + t.preview_url + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' + output_str +'</li>');
+            });
+
+            // enable audio player
+            $('#playlist-list li').click(function(d) { 
+                if (sample) sample.pause();
+                if (sample == null || sample != d.target.children[0]) {
+                    sample = d.target.children[0];
+                    sample.play();
+                }
             });
         });
     }
@@ -94,6 +103,8 @@ var PAGES = {
     presets: 'preset-select',
 }
 
+var sample = null;
+
 
 
 /******* RUNNING CODE ********/
@@ -132,11 +143,6 @@ $(document).ready(function() {
             $('#' + newPage).show();
         }
     }
-
-    // for audio player
-    $('body').click(function() {
-        $('#audio')[0].play();
-    });
 });
 
 
