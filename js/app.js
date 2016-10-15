@@ -87,19 +87,29 @@ var scopes = [
     // 'user-top-read'
 ];
 
+var logged_in = spotify.login.pullAccessToken(none, false);
+
+var PAGES = {
+    login: 'login',
+    presets: 'preset-select',
+}
+
 
 
 /******* RUNNING CODE ********/
 $(document).ready(function() {
+
     // log in code
     $('#login').click(function() {
         spotify.login.openLogin(scopes);
     });
 
-    // check if user is logged in
-    if (spotify.login.pullAccessToken(none, false)) {
+    if (logged_in) {
         console.log('user logged in');
         spotify.login.getUserInfo(none, 'yes');
+        setPage(PAGES['presets']);
+    } else {
+        setPage(PAGES['login']);
     }
 
     $('button#build').click(function() {
@@ -109,5 +119,22 @@ $(document).ready(function() {
 
     $('body').click(function() {
         $('#audio')[0].play();
+    });
+});
+
+    // In order to setup a page change on click in html, add a data-dest
+    // attribute to the link or button, where the value of data-dest is the id
+    // of the page you want to show.
+
+    $('.page a, .page button').filter('[data-dest]').click(function() {
+        setPage($(this).data('dest'));
     })
+
+    // hides all pages, and then shows the page with id = newPage
+    function setPage(newPage) {
+        $('.page').hide();
+        if (newPage != PAGES['presets'] || logged_in) {
+            $('#' + newPage).show();
+        }
+    }
 });

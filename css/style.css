@@ -8,8 +8,12 @@ body, html {
     height: 100%;
 }
 
+.page {
+    display: none;
+}
+
 /* login styles */
-button#login {
+button#login-button {
     font-size: 15px;
     color: white;
     padding: 8px 10px 8px 10px;
@@ -21,7 +25,7 @@ button#login {
     margin-top: 57.7px;
 }
 
-.content#login {
+#login .content {
     position: relative;
     top: 50%
 }
@@ -40,8 +44,8 @@ button#login {
     font-size: 40px;
 }
 
-#login-page{
-    background: url(../img/spotify.png) no-repeat center center fixed; 
+#login {
+    background: url(../img/spotify.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -88,4 +92,3 @@ button#build {
     border-radius: 50px;
     cursor: pointer;
 }
-
