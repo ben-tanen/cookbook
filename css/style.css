@@ -92,3 +92,8 @@ button#build {
     border-radius: 50px;
     cursor: pointer;
 }
+
+/* playlist list styles */
+#playlist-list li {
+    cursor: pointer;
+}
