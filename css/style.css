@@ -9,6 +9,9 @@
     width: 200px;
 }
 
+.page {
+    display: none;
+}
 
 /* login styles */
 button#login {
@@ -56,4 +59,3 @@ button#build {
     border-radius: 50px;
     cursor: pointer;
 }
-
