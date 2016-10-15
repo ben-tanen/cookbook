@@ -14,7 +14,6 @@ body, html {
     display: none;
 }
 
-<<<<<<< HEAD
 button {
     cursor: pointer;
 }
@@ -173,10 +172,19 @@ button.slider-icon:hover {
 
 #playlist-table td {
     border-bottom: 1px solid rgba(0,0,0,.2);
+    cursor: pointer;
 }
 
 #playlist-table td:last-of-type {
     text-align: right;
+}
+
+#playlist-table tr i.fa-play-circle {
+    opacity: 0;
+}
+
+#playlist-table tr:hover i {
+    opacity: 1;
 }
 
 /* playlist list styles */

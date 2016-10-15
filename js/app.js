@@ -18,19 +18,29 @@ function buildSongList(r) {
         spotify.general.getURL(r.next, buildSongList, null);
     } else {
         spotify.track.getTracks(playlist_tracks, function(r) {
+            var time_sum = 0;
             r.tracks.forEach(function(t) {
-                var output_str = '"' + t.name + '", by ';
-                t.artists.forEach(function(a) {
-                    output_str += a.name;
-                });
-                $('#playlist-list').append('<li><audio class="audio-sample"><source src="' + t.preview_url + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' + output_str +'</li>');
+                time_sum += t.duration_ms;
+
+                var output_str = '<tr><td><i class="fa fa-play-circle fa-lg" aria-hidden="true"></i><audio class="audio-sample"><source src="' + t.preview_url + '" type="audio/mpeg">Your browser does not support the audio element.</audio></td><td>' + t.name + '</td><td>';
+                for (var i = 0; i < t.artists.length; i++) {
+                    output_str += t.artists[i].name + (i < t.artists.length - 1 ? ', ' : '');
+                }
+                output_str += '<td><i class="fa fa-times fa-lg" aria-hidden="true"></i></td></tr>';
+                $('#playlist-table').append(output_str);
             });
 
+            $('p.duration').html(Math.floor(time_sum / 60000) + 'm ' + Math.floor(time_sum / 1000) % 60 + 's');
+
             // enable audio player
-            $('#playlist-list li').click(function(d) { 
-                if (sample) sample.pause();
-                if (sample == null || sample != d.target.children[0]) {
-                    sample = d.target.children[0];
+            $('#playlist-table tr').click(function(d) { 
+                if (sample) {
+                    sample.pause();
+                    $('.fa-pause-circle').removeClass('fa-pause-circle').addClass('fa-play-circle');
+                }
+                if (sample == null || sample != d.currentTarget.children[0].children[1]) {
+                    $(d.currentTarget.children[0].children[0]).addClass('fa-pause-circle').removeClass('fa-play-circle');
+                    sample = d.currentTarget.children[0].children[1];
                     sample.play();
                 }
             });
