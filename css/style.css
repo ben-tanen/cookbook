@@ -89,7 +89,7 @@ button#login-button {
 }
 
 #preset-select{
-    background-color: #BFF2D0;
+    background: url(../img/wood-panel.jpg);
     background-size: 100% 100%;
     height: 100%;
 }
