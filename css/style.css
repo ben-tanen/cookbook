@@ -120,19 +120,6 @@ button#login-button {
     font-size: 34px;
 }
 
-<<<<<<< HEAD
-/* build button styles */
-button#build {
-    font-size: 15px;
-    color: white;
-    padding: 10px 30px 10px 30px;
-    background-color: #1ED760;
-    border: none;
-    border-radius: 70px;
-    cursor: pointer;
-=======
-
-
 
 /* playlist page */
 #playlist .content {
@@ -190,7 +177,6 @@ button.slider-icon:hover {
 
 #playlist-table td:last-of-type {
     text-align: right;
->>>>>>> efde3d027303cec1ed42caf884ae73776bcade0e
 }
 
 /* playlist list styles */
