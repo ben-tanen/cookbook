@@ -23,7 +23,16 @@ function buildSongList(r) {
                 t.artists.forEach(function(a) {
                     output_str += a.name;
                 });
-                $('#playlist-list').append('<li>' + output_str +'</li>');
+                $('#playlist-list').append('<li><audio class="audio-sample"><source src="' + t.preview_url + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' + output_str +'</li>');
+            });
+
+            // enable audio player
+            $('#playlist-list li').click(function(d) { 
+                if (sample) sample.pause();
+                if (sample == null || sample != d.target.children[0]) {
+                    sample = d.target.children[0];
+                    sample.play();
+                }
             });
         });
     }
@@ -56,6 +65,8 @@ function filterSongs(r) {
     }
 }
 
+
+
 /****** GLOBAL VARS *********/
 var preset_params = {
     danceability: {
@@ -70,7 +81,21 @@ var preset_params = {
 
 var playlist_tracks = [ ];
 
-// check if user is logged in
+var scopes = [
+    'playlist-read-private',
+    'playlist-read-collaborative',
+    'playlist-modify-public',
+    'playlist-modify-private',
+    'user-library-read',
+    'user-read-private',
+    // 'user-library-modify',
+    // 'user-read-birthdate',
+    // 'user-read-email',
+    // 'user-follow-read',
+    // 'user-follow-modify',
+    // 'user-top-read'
+];
+
 var logged_in = spotify.login.pullAccessToken(none, false);
 
 // hash of page names and their corresponding id values
@@ -79,32 +104,21 @@ var PAGES = {
     presets: 'preset-select',
 }
 
+var sample = null;
 
+
+
+/******* RUNNING CODE ********/
 $(document).ready(function() {
-
-
 
     // log in code
     $('#login').click(function() {
-        scopes = [
-            'playlist-read-private',
-            'playlist-read-collaborative',
-            'playlist-modify-public',
-            'playlist-modify-private',
-            'user-library-read',
-            'user-library-modify',
-            'user-read-private',
-            'user-read-birthdate',
-            'user-read-email',
-            'user-follow-read',
-            'user-follow-modify',
-            'user-top-read'
-        ];
         spotify.login.openLogin(scopes);
     });
 
     if (logged_in) {
         console.log('user logged in');
+        spotify.login.getUserInfo(none, 'yes');
         setPage(PAGES['presets']);
     } else {
         setPage(PAGES['login']);
@@ -122,7 +136,7 @@ $(document).ready(function() {
 
     $('.page a, .page button').filter('[data-dest]').click(function() {
         setPage($(this).data('dest'));
-    })
+    });
 
     // hides all pages, and then shows the page with id = newPage
     function setPage(newPage) {
@@ -132,3 +146,5 @@ $(document).ready(function() {
         }
     }
 });
+
+
