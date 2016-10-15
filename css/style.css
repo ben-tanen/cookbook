@@ -12,13 +12,20 @@
 
 /* login styles */
 button#login {
-    font-size: 25px;
+    font-size: 15px;
     color: white;
-    padding: 15px 20px 15px 20px;
+    padding: 5px 35px 5px 35px;
     background-color: #1ED760;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    width: 300px;
+    margin-top: 57.7px;
+}
+
+.content#login {
+    position: relative;
+    top: 50%
 }
 
 body, html {
@@ -27,16 +34,13 @@ body, html {
 }
 
 h1{
-    position: relative;
-    top: 50%;
     font-size: 32px;
     font-weight: normal;
 }
 
 p{
-    position: relative;
-    top: 55.5%;
     font-size: 15px;
+    margin-top: 19.2px;
 }
 
 #title {
