@@ -20,13 +20,22 @@ button#login {
     border-radius: 50px;
     cursor: pointer;
 }
+
+body, html {
+    height: 100%;
+    font-family: Montserrat, Helvetica;
+}
+
 h1{
     position: relative;
+    top: 50%;
     font-size: 32px;
     font-weight: normal;
 }
 
 p{
+    position: relative;
+    top: 55.5%;
     font-size: 15px;
 }
 
@@ -43,6 +52,7 @@ p{
     height: 100%;
     width: 100%;
     color: white;
+    font-weight: normal;
     text-align: center;
 }
 /* preset select styles */
