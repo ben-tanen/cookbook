@@ -2,7 +2,8 @@
 // initialize spotify stuff
 var spotify = new SpotifyAPI();
 spotify.login.setClientId('7501ca235761432fac0f01e5d91cee1d');
-spotify.login.setRedirect('http://localhost:8000/');
+if (location.hostname == 'localhost') spotify.login.setRedirect('http://localhost:8000/');
+else spotify.login.setRedirect('http://ben-tanen.com/Cookbook/');
 
 
 
