@@ -120,6 +120,12 @@ button#login-button {
     font-size: 34px;
 }
 
+button#build {
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+}
+
 
 /* playlist page */
 #playlist .content {
