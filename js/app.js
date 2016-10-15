@@ -117,18 +117,13 @@ $(document).ready(function() {
         spotify.library.getTracks('US', buildSongList, null);
     });
 
-    $('body').click(function() {
-        $('#audio')[0].play();
-    });
-});
-
     // In order to setup a page change on click in html, add a data-dest
     // attribute to the link or button, where the value of data-dest is the id
     // of the page you want to show.
 
     $('.page a, .page button').filter('[data-dest]').click(function() {
         setPage($(this).data('dest'));
-    })
+    });
 
     // hides all pages, and then shows the page with id = newPage
     function setPage(newPage) {
@@ -137,4 +132,11 @@ $(document).ready(function() {
             $('#' + newPage).show();
         }
     }
+
+    // for audio player
+    $('body').click(function() {
+        $('#audio')[0].play();
+    });
 });
+
+
