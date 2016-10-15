@@ -7,10 +7,7 @@ spotify.login.setRedirect('http://localhost:8000/');
 function none() { };
 
 $(document).ready(function() {
-    console.log('yes, hello! stuff is happening...');
-
     // log in code
-    spotify.login.pullAccessToken(none, false);
     $('#login').click(function() {
         scopes = [
             'playlist-read-private',
@@ -28,4 +25,9 @@ $(document).ready(function() {
         ];
         spotify.login.openLogin(scopes);
     });
+
+    // check if user is logged in
+    if (spotify.login.pullAccessToken(none, false)) {
+        console.log('user logged in');
+    }
 });

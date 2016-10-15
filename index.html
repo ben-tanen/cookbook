@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Polyhack 2016 - Spotify Playlist</title>
+
+    <!-- linking to styling stuff (google fonts, etc.) -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- js stuff (spotify.js, jquery) -->
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/spotify.js"></script>
     <script src="/js/app.js"></script>
 </head>
 <body>
-    <h1>Hello, code will be here</h1>
+    <div class='content' id='title'>
+        <img src='img/spotify-logo.png' id='spotify-logo' />
+        <h1>Hello, code will be here</h1>
+    </div>
 
-    <button id='login'>Log in to Spotify</button>
+    <div class='content' id='login'>
+        <button id='login'>Log in to Spotify</button>
+    </div>
+
+    <div class='content' id='preset-select'>
+        <div class='preset' id='party'>
+            <p>Party</p>
+        </div>
+
+        <div class='preset' id='study'>
+            <p>Study</p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,4 +1,48 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Montserrat, sans-serif;
 }
+
+/* header styles */
+#spotify-logo {
+    width: 200px;
+}
+
+
+/* login styles */
+button#login {
+    font-size: 25px;
+    color: white;
+    padding: 15px 20px 15px 20px;
+    background-color: #1ED760;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* preset select styles */
+.preset {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.preset#party {
+    background: url(/img/presets/party.png);
+    background-size: 150px 150px;
+}
+
+.preset#study {
+    background: url(/img/presets/study.png);
+    background-size: 150px 150px;
+}
+
+.preset p {
+    color: white;
+    text-align: center;
+    padding-top: 57px;
+    font-size: 25px;
+}
+
