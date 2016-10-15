@@ -6,6 +6,7 @@
 
     <!-- linking to styling stuff (google fonts, etc.) -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- js stuff (spotify.js, jquery) -->
@@ -18,13 +19,14 @@
         <div class="content">
             <h1><span id="title">cookbook</span>: a Spotify tool</h1>
             <p>make custom playlists of music you already love,<br>measured to fit your mood, activities, and atmosphere.</p>
-            <button id="login-button" data-dest="preset-select">log in to Spotify</button>
+            <button id="login-button" class="btn-primary btn-sm" data-dest="preset-select">log in to Spotify</button>
         </div>
     </div>
-    
+
     <div class="page" id="preset-select">
         <div class="content" id="preset-select">
             <h1>Choose your playlist theme : </h1>
+<<<<<<< HEAD
             <div class="preset" id="party">
                 <p>Party</p>
             </div>
@@ -39,6 +41,11 @@
         <
     </div> 
 
+=======
+            <p> <img src="">
+        </div>
+    </div>
+>>>>>>> efde3d027303cec1ed42caf884ae73776bcade0e
     <div class="page" id="preset-select">
         <div class="preset" id="party">
             <p>Party</p>
@@ -48,13 +55,45 @@
             <p>Study</p>
         </div>
 
-        <button id="build" data-dest="playlist">Build Your Playlist</button>
+        <button id="build" class="btn-primary btn-lg" data-dest="playlist">Build Your Playlist</button>
     </div>
 
     <div class="page" id="playlist">
+        <div class="content">
+            <div class="header">
+                <div class="left-side">
+                    <div class="title">
+                        <h3>Party playlist</h3>
+                        <button class="slider-icon"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                    </div>
+                    <p class="duration">43 minutes</p>
+                </div>
+                <div class="right-side">
+                    <button id="playlist-button" class="btn-primary">Add to spotify</button>
+                </div>
+            </div>
+            <div class="body">
+                <table cellspacing="0" id="playlist-table">
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-play-circle fa-lg" aria-hidden="true"></i></td>
+                        <td>Come Down</td>
+                        <td>Anderson .Paak</td>
+                        <td><i class="fa fa-times fa-lg" aria-hidden="true"></i></td>
+                    </tr>
 
-        <ul id="playlist-list">
-        </ul>
+                </table>
+
+                <!-- TODO: take this out -->
+                <ul id="playlist-list">
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

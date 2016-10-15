@@ -98,6 +98,7 @@ var scopes = [
 
 var logged_in = spotify.login.pullAccessToken(none, false);
 
+// hash of page names and their corresponding id values
 var PAGES = {
     login: 'login',
     presets: 'preset-select',
@@ -127,6 +128,7 @@ $(document).ready(function() {
         console.log('you clicked the button');
         spotify.library.getTracks('US', buildSongList, null);
     });
+
 
     // In order to setup a page change on click in html, add a data-dest
     // attribute to the link or button, where the value of data-dest is the id
