@@ -7,4 +7,5 @@ This project uses [a simplified JavaScript wrapper for the Spotify API](https://
 * * *
 
 #### To Do
-- [ ] Figure out what we're going to do
+- [ ] Get authentication working
+- [ ] 
