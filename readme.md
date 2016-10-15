@@ -5,4 +5,5 @@ A tool to algorithmically build yourself a Spotify playlist to party to, workout
 * * *
 
 #### To Do
-- [ ] Figure out what we're going to do
+- [ ] Get authentication working
+- [ ] 
