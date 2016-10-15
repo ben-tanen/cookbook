@@ -70,34 +70,40 @@ var preset_params = {
 
 var playlist_tracks = [ ];
 
+var scopes = [
+    'playlist-read-private',
+    'playlist-read-collaborative',
+    'playlist-modify-public',
+    'playlist-modify-private',
+    'user-library-read',
+    'user-read-private',
+    // 'user-library-modify',
+    // 'user-read-birthdate',
+    // 'user-read-email',
+    // 'user-follow-read',
+    // 'user-follow-modify',
+    // 'user-top-read'
+];
+
 
 $(document).ready(function() {
     // log in code
     $('#login').click(function() {
-        scopes = [
-            'playlist-read-private',
-            'playlist-read-collaborative',
-            'playlist-modify-public',
-            'playlist-modify-private',
-            'user-library-read',
-            'user-library-modify',
-            'user-read-private',
-            'user-read-birthdate',
-            'user-read-email',
-            'user-follow-read',
-            'user-follow-modify',
-            'user-top-read'
-        ];
         spotify.login.openLogin(scopes);
     });
 
     // check if user is logged in
     if (spotify.login.pullAccessToken(none, false)) {
         console.log('user logged in');
+        spotify.login.getUserInfo(none, 'yes');
     }
 
     $('button#build').click(function() {
         console.log('you clicked the button');
         spotify.library.getTracks('US', buildSongList, null);
     });
+
+    $('body').click(function() {
+        $('#audio')[0].play();
+    })
 });
