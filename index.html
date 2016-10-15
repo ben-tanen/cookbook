@@ -19,7 +19,7 @@
         <div class="content">
             <h1><span id="title">cookbook</span>: a Spotify tool</h1>
             <p>make custom playlists of music you already love,<br>measured to fit your mood, activities, and atmosphere.</p>
-            <button id="login-button" class="btn-primary btn-sm" data-dest="preset-select">log in to Spotify</button>
+            <button id="login-button" class="btn-primary btn-sm" data-dest="preset-select">Log in to Spotify</button>
         </div>
     </div>
 
@@ -32,10 +32,13 @@
             <div class="preset" id="study">
                 <p>Study</p>
             </div>
-            <div class="preset" id="relax">
-                <p>Relax</p>
+            <div class="preset" id="chill">
+                <p>Chill</p>
             </div>
-            <p><button id="build" class="btn-primary btn-lg" data-dest="playlist">build your playlist</button></p>
+            <div id="manual-set">  </div>
+            <div id="ingredients-expand">
+                <p> <button id="build" class="btn-primary btn-lg" data-dest="playlist">Build Your Playlist</button> </p>
+            </div>
         </div>
     </div>
 
@@ -64,10 +67,6 @@
                         <th></th>
                     </tr>
                 </table>
-
-                <!-- TODO: take this out -->
-                <ul id="playlist-list">
-                </ul>
             </div>
         </div>
     </div>
