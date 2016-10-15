@@ -46,3 +46,14 @@ button#login {
     font-size: 25px;
 }
 
+/* build button styles */
+button#build {
+    font-size: 25px;
+    color: white;
+    padding: 15px 20px 15px 20px;
+    background-color: #1ED760;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
