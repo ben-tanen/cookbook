@@ -73,6 +73,7 @@ var playlist_tracks = [ ];
 // check if user is logged in
 var logged_in = spotify.login.pullAccessToken(none, false);
 
+// hash of page names and their corresponding id values
 var PAGES = {
     login: 'login',
     presets: 'preset-select',
@@ -114,11 +115,10 @@ $(document).ready(function() {
         spotify.library.getTracks('US', buildSongList, null);
     });
 
+
     // In order to setup a page change on click in html, add a data-dest
     // attribute to the link or button, where the value of data-dest is the id
     // of the page you want to show.
-
-
 
     $('.page a, .page button').filter('[data-dest]').click(function() {
         setPage($(this).data('dest'));
