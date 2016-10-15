@@ -30,12 +30,12 @@ button#login {
 }
 
 .preset#party {
-    background: url(/img/presets/party.png);
+    background: url(../img/presets/party.png);
     background-size: 150px 150px;
 }
 
 .preset#study {
-    background: url(/img/presets/study.png);
+    background: url(../img/presets/study.png);
     background-size: 150px 150px;
 }
 
