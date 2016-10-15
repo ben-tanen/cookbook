@@ -56,6 +56,8 @@ function filterSongs(r) {
     }
 }
 
+
+
 /****** GLOBAL VARS *********/
 var preset_params = {
     danceability: {
@@ -86,6 +88,8 @@ var scopes = [
 ];
 
 
+
+/******* RUNNING CODE ********/
 $(document).ready(function() {
     // log in code
     $('#login').click(function() {
